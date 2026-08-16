@@ -1,0 +1,1 @@
+vehicles-dev @ git+https://github.com/vehicles-dev/python-sdk.git@v0.1.0

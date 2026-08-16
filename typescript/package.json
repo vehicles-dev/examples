@@ -1,0 +1,27 @@
+{
+  "name": "@vehicles-dev/examples-typescript",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Runnable server-side TypeScript examples for the Vehicles.dev API.",
+  "license": "MIT",
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "check": "npm run typecheck && npm test",
+    "example:decode": "tsx src/decode-vin.ts",
+    "example:history": "tsx src/order-history-report.ts",
+    "example:listings": "tsx src/search-listings.ts",
+    "test": "tsx --test test/common.test.ts",
+    "typecheck": "tsc --noEmit -p tsconfig.json"
+  },
+  "dependencies": {
+    "@vehicles-dev/sdk": "github:vehicles-dev/typescript-sdk#v0.1.0"
+  },
+  "devDependencies": {
+    "@types/node": "^24.13.3",
+    "tsx": "^4.23.12",
+    "typescript": "^5.9.3"
+  }
+}

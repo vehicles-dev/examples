@@ -1,0 +1,14 @@
+.DS_Store
+.env
+.env.*
+!.env.example
+
+typescript/node_modules/
+typescript/coverage/
+
+python/.venv/
+python/__pycache__/
+python/.mypy_cache/
+python/.pytest_cache/
+python/.ruff_cache/
+python/**/*.pyc
