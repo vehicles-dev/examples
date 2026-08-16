@@ -1,7 +1,12 @@
 import assert from "node:assert/strict";
 import test from "node:test";
 
-import { readExampleEnvironment, readHistoryReportEnvironment } from "../src/common.ts";
+import {
+  listingFiltersFromVehicle,
+  readExampleEnvironment,
+  readHistoryReportEnvironment,
+  safeVehicleSummary
+} from "../src/common.ts";
 
 const completeEnvironment = {
   VEHICLES_API_KEY: "test-api-key",
@@ -62,4 +67,27 @@ test("returns validated values only after every guard passes", () => {
       vin: "TEST-VIN"
     }
   );
+});
+
+test("vehicle summaries and listing filters exclude private and extra fields", () => {
+  const vehicle = {
+    make: "Honda",
+    model: "Accord",
+    owner: { name: "Private Owner" },
+    reportId: "private-report-id",
+    trim: "EX",
+    vin: "1HGCM82633A004352",
+    year: 2003
+  };
+
+  assert.deepEqual(safeVehicleSummary(vehicle), {
+    make: "Honda",
+    model: "Accord",
+    trim: "EX",
+    year: 2003
+  });
+  assert.deepEqual(listingFiltersFromVehicle(vehicle), {
+    make: "Honda",
+    model: "Accord"
+  });
 });

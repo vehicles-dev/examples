@@ -1,6 +1,11 @@
 import unittest
 
-from common import read_example_environment, read_history_report_environment
+from common import (
+    listing_filters_from_vehicle,
+    read_example_environment,
+    read_history_report_environment,
+    safe_vehicle_summary,
+)
 
 
 COMPLETE_ENVIRONMENT = {
@@ -60,6 +65,26 @@ class ExampleEnvironmentTests(unittest.TestCase):
                 "idempotency_key": "123e4567-e89b-42d3-a456-426614174000",
                 "vin": "TEST-VIN",
             },
+        )
+
+    def test_vehicle_summaries_and_filters_exclude_private_fields(self) -> None:
+        vehicle = {
+            "make": "Honda",
+            "model": "Accord",
+            "owner": {"name": "Private Owner"},
+            "reportId": "private-report-id",
+            "trim": "EX",
+            "vin": "1HGCM82633A004352",
+            "year": 2003,
+        }
+
+        self.assertEqual(
+            safe_vehicle_summary(vehicle),
+            {"make": "Honda", "model": "Accord", "trim": "EX", "year": 2003},
+        )
+        self.assertEqual(
+            listing_filters_from_vehicle(vehicle),
+            {"make": "Honda", "model": "Accord"},
         )
 
 
