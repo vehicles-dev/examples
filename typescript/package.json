@@ -17,7 +17,7 @@
     "typecheck": "tsc --noEmit -p tsconfig.json"
   },
   "dependencies": {
-    "@vehicles-dev/sdk": "github:vehicles-dev/typescript-sdk#v0.1.0"
+    "@vehicles-dev/sdk": "git+https://github.com/vehicles-dev/typescript-sdk.git#v0.1.0"
   },
   "devDependencies": {
     "@types/node": "^24.13.3",
