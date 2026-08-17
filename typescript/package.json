@@ -1,6 +1,6 @@
 {
   "name": "@vehicles-dev/examples-typescript",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "private": true,
   "description": "Runnable server-side TypeScript examples for the Vehicles.dev API.",
   "license": "MIT",
@@ -17,7 +17,7 @@
     "typecheck": "tsc --noEmit -p tsconfig.json"
   },
   "dependencies": {
-    "@vehicles-dev/sdk": "git+https://github.com/vehicles-dev/typescript-sdk.git#v0.1.0"
+    "@vehicles-dev/sdk": "git+https://github.com/vehicles-dev/typescript-sdk.git#v0.1.1"
   },
   "devDependencies": {
     "@types/node": "^24.13.3",

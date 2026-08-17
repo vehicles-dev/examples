@@ -15,10 +15,12 @@ API payload.
 ## Package status
 
 The SDKs are not yet published to npm or PyPI. These starters install the
-immutable `v0.1.0` GitHub tags:
+immutable `v0.1.1` GitHub tags:
 
-- TypeScript: `github:vehicles-dev/typescript-sdk#v0.1.0`
-- Python: `vehicles-dev @ git+https://github.com/vehicles-dev/python-sdk.git@v0.1.0`
+- TypeScript repository: `vehicles-dev/typescript-sdk`
+  (`github:vehicles-dev/typescript-sdk#v0.1.1`)
+- Python repository: `vehicles-dev/python-sdk`
+  (`vehicles-dev @ git+https://github.com/vehicles-dev/python-sdk.git@v0.1.1`)
 
 No registry release workflow lives in this repository. The dependency
 declarations can move to package registries after official publishing is
